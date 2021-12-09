@@ -49,8 +49,6 @@ with open(filename) as f:
                 continue
             else:
                 go_downstream(i,j,heightmap,visited)
-    print(nines, len(visited))
     basin_dict = Counter([x[1] for y in heightmap for x in y])
     basin_dict.pop(0)
-    print(sum(basin_dict.values()))
     print(reduce((lambda x, y: x* y), sorted(basin_dict.values(),reverse=True)[:3]))
