@@ -34,7 +34,6 @@ with open(filename) as f:
     lines = f.readlines()
     line_len = len(lines[0][:-1])
     heightmap = [[[0,0] for j in range(line_len)] for i in range(len(lines))]
-    nines = 0
     for i, l in enumerate(lines):
         for j, c in enumerate(l.split()[0]):
             heightmap[i][j][0] = c
@@ -43,7 +42,6 @@ with open(filename) as f:
         for i in range(len(lines)):
             val = int(heightmap[i][j][0])
             if val == 9:
-                nines += 1
                 continue
             elif (i,j) in visited:
                 continue

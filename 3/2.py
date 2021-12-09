@@ -22,10 +22,8 @@ with open(filename) as f:
     for i in range(num_len):
         bit = [x[i] for x in co2_lines]
         if (bit.count('0') <= bit.count('1')):
-            co2 += '0'
             co2_lines = list(filter(lambda line: line[i]=='0', co2_lines))
         else:
-            co2 += '1'
             co2_lines = list(filter(lambda line: line[i]=='1', co2_lines))
         if len(co2_lines) == 1:
             co2 = co2_lines[0]
